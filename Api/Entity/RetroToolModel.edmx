@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RetroToolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_mst_agiledescinfo">
+          <Key>
+            <PropertyRef Name="agiledescinfo_id" />
+          </Key>
+          <Property Name="agiledescinfo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agiledescinfo_text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="agiledescinfo_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="agiledescinfo_remarks" Type="nvarchar(max)" />
+          <Property Name="agiledescinfo_isdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_mst_imageinfo">
+          <Key>
+            <PropertyRef Name="imageinfo_id" />
+          </Key>
+          <Property Name="imageinfo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imageinfo_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="imageinfo_path" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="imageinfo_isdeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_mst_imageinfodetails">
+          <Key>
+            <PropertyRef Name="imageinfodetails_id" />
+          </Key>
+          <Property Name="imageinfodetails_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imageinfodetails_text" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="imageinfodetails_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="imageinfodetails_imageinfo_id" Type="int" Nullable="false" />
+          <Property Name="imageinfodetails_color" Type="nvarchar" MaxLength="50" />
+          <Property Name="imageinfodetails_isdeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_mst_projectinfo">
+          <Key>
+            <PropertyRef Name="projectinfo_id" />
+          </Key>
+          <Property Name="projectinfo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectinfo_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="projectinfo_portfolio" Type="nvarchar" MaxLength="50" />
+          <Property Name="projectinfo_sow_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="projectinfo_sow_coverage" Type="nvarchar" MaxLength="50" />
+          <Property Name="projectinfo_remarks" Type="nvarchar(max)" />
+          <Property Name="projectinfo_isdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_mst_retroinfodetails">
+          <Key>
+            <PropertyRef Name="retroinfodetails_id" />
+          </Key>
+          <Property Name="retroinfodetails_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="retroinfodetails_retroinfo_id" Type="int" Nullable="false" />
+          <Property Name="retroinfodetails_text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="retroinfodetails_top" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="retroinfodetails_left" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="retroinfodetails_isdeleted" Type="bit" Nullable="false" />
+          <Property Name="retroinfodetails_category_id" Type="int" />
+          <Property Name="retroinfodetails_color" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_trn_retroinfo">
+          <Key>
+            <PropertyRef Name="retroinfo_id" />
+          </Key>
+          <Property Name="retroinfo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="retroinfo_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="retroinfo_projectinfo_id" Type="int" Nullable="false" />
+          <Property Name="retroinfo_sprint" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="retroinfo_date" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="retroinfo_imagepath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="retroinfo_imageinfo_id" Type="int" Nullable="false" />
+          <Property Name="retroinfo_status" Type="bit" Nullable="false" />
+          <Property Name="retroinfo_isdeleted" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="RetroToolModelStoreContainer">
+          <EntitySet Name="tbl_mst_agiledescinfo" EntityType="Self.tbl_mst_agiledescinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_mst_imageinfo" EntityType="Self.tbl_mst_imageinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_mst_imageinfodetails" EntityType="Self.tbl_mst_imageinfodetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_mst_projectinfo" EntityType="Self.tbl_mst_projectinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_mst_retroinfodetails" EntityType="Self.tbl_mst_retroinfodetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_trn_retroinfo" EntityType="Self.tbl_trn_retroinfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RetroToolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RetroToolEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="tbl_mst_agiledescinfo" EntityType="RetroToolModel.tbl_mst_agiledescinfo" />
+          <EntitySet Name="tbl_mst_imageinfo" EntityType="RetroToolModel.tbl_mst_imageinfo" />
+          <EntitySet Name="tbl_mst_projectinfo" EntityType="RetroToolModel.tbl_mst_projectinfo" />
+          <EntitySet Name="tbl_mst_imageinfodetails" EntityType="RetroToolModel.tbl_mst_imageinfodetails" />
+          <EntitySet Name="tbl_mst_retroinfodetails" EntityType="RetroToolModel.tbl_mst_retroinfodetails" />
+          <EntitySet Name="tbl_trn_retroinfo" EntityType="RetroToolModel.tbl_trn_retroinfo" />
+        </EntityContainer>
+        <EntityType Name="tbl_mst_agiledescinfo">
+          <Key>
+            <PropertyRef Name="agiledescinfo_id" />
+          </Key>
+          <Property Name="agiledescinfo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="agiledescinfo_text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="agiledescinfo_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agiledescinfo_remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="agiledescinfo_isdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_mst_imageinfo">
+          <Key>
+            <PropertyRef Name="imageinfo_id" />
+          </Key>
+          <Property Name="imageinfo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imageinfo_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imageinfo_path" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="imageinfo_isdeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_mst_projectinfo">
+          <Key>
+            <PropertyRef Name="projectinfo_id" />
+          </Key>
+          <Property Name="projectinfo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectinfo_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projectinfo_portfolio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projectinfo_sow_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projectinfo_sow_coverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projectinfo_remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="projectinfo_isdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_mst_imageinfodetails">
+          <Key>
+            <PropertyRef Name="imageinfodetails_id" />
+          </Key>
+          <Property Name="imageinfodetails_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imageinfodetails_text" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imageinfodetails_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imageinfodetails_imageinfo_id" Type="Int32" Nullable="false" />
+          <Property Name="imageinfodetails_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imageinfodetails_isdeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_mst_retroinfodetails">
+          <Key>
+            <PropertyRef Name="retroinfodetails_id" />
+          </Key>
+          <Property Name="retroinfodetails_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="retroinfodetails_retroinfo_id" Type="Int32" Nullable="false" />
+          <Property Name="retroinfodetails_text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfodetails_top" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfodetails_left" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfodetails_isdeleted" Type="Boolean" Nullable="false" />
+          <Property Name="retroinfodetails_category_id" Type="Int32" />
+          <Property Name="retroinfodetails_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_trn_retroinfo">
+          <Key>
+            <PropertyRef Name="retroinfo_id" />
+          </Key>
+          <Property Name="retroinfo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="retroinfo_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfo_projectinfo_id" Type="Int32" Nullable="false" />
+          <Property Name="retroinfo_sprint" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfo_date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfo_imagepath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retroinfo_imageinfo_id" Type="Int32" Nullable="false" />
+          <Property Name="retroinfo_status" Type="Boolean" Nullable="false" />
+          <Property Name="retroinfo_isdeleted" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RetroToolModelStoreContainer" CdmEntityContainer="RetroToolEntities" >
+          <EntitySetMapping Name="tbl_mst_agiledescinfo">
+            <EntityTypeMapping TypeName="RetroToolModel.tbl_mst_agiledescinfo">
+              <MappingFragment StoreEntitySet="tbl_mst_agiledescinfo">
+                <ScalarProperty Name="agiledescinfo_isdeleted" ColumnName="agiledescinfo_isdeleted" />
+                <ScalarProperty Name="agiledescinfo_remarks" ColumnName="agiledescinfo_remarks" />
+                <ScalarProperty Name="agiledescinfo_type" ColumnName="agiledescinfo_type" />
+                <ScalarProperty Name="agiledescinfo_text" ColumnName="agiledescinfo_text" />
+                <ScalarProperty Name="agiledescinfo_id" ColumnName="agiledescinfo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_mst_imageinfo">
+            <EntityTypeMapping TypeName="RetroToolModel.tbl_mst_imageinfo">
+              <MappingFragment StoreEntitySet="tbl_mst_imageinfo">
+                <ScalarProperty Name="imageinfo_isdeleted" ColumnName="imageinfo_isdeleted" />
+                <ScalarProperty Name="imageinfo_path" ColumnName="imageinfo_path" />
+                <ScalarProperty Name="imageinfo_name" ColumnName="imageinfo_name" />
+                <ScalarProperty Name="imageinfo_id" ColumnName="imageinfo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_mst_projectinfo">
+            <EntityTypeMapping TypeName="RetroToolModel.tbl_mst_projectinfo">
+              <MappingFragment StoreEntitySet="tbl_mst_projectinfo">
+                <ScalarProperty Name="projectinfo_isdeleted" ColumnName="projectinfo_isdeleted" />
+                <ScalarProperty Name="projectinfo_remarks" ColumnName="projectinfo_remarks" />
+                <ScalarProperty Name="projectinfo_sow_coverage" ColumnName="projectinfo_sow_coverage" />
+                <ScalarProperty Name="projectinfo_sow_name" ColumnName="projectinfo_sow_name" />
+                <ScalarProperty Name="projectinfo_portfolio" ColumnName="projectinfo_portfolio" />
+                <ScalarProperty Name="projectinfo_name" ColumnName="projectinfo_name" />
+                <ScalarProperty Name="projectinfo_id" ColumnName="projectinfo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_mst_imageinfodetails">
+            <EntityTypeMapping TypeName="RetroToolModel.tbl_mst_imageinfodetails">
+              <MappingFragment StoreEntitySet="tbl_mst_imageinfodetails">
+                <ScalarProperty Name="imageinfodetails_isdeleted" ColumnName="imageinfodetails_isdeleted" />
+                <ScalarProperty Name="imageinfodetails_color" ColumnName="imageinfodetails_color" />
+                <ScalarProperty Name="imageinfodetails_imageinfo_id" ColumnName="imageinfodetails_imageinfo_id" />
+                <ScalarProperty Name="imageinfodetails_type" ColumnName="imageinfodetails_type" />
+                <ScalarProperty Name="imageinfodetails_text" ColumnName="imageinfodetails_text" />
+                <ScalarProperty Name="imageinfodetails_id" ColumnName="imageinfodetails_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_mst_retroinfodetails">
+            <EntityTypeMapping TypeName="RetroToolModel.tbl_mst_retroinfodetails">
+              <MappingFragment StoreEntitySet="tbl_mst_retroinfodetails">
+                <ScalarProperty Name="retroinfodetails_color" ColumnName="retroinfodetails_color" />
+                <ScalarProperty Name="retroinfodetails_category_id" ColumnName="retroinfodetails_category_id" />
+                <ScalarProperty Name="retroinfodetails_isdeleted" ColumnName="retroinfodetails_isdeleted" />
+                <ScalarProperty Name="retroinfodetails_left" ColumnName="retroinfodetails_left" />
+                <ScalarProperty Name="retroinfodetails_top" ColumnName="retroinfodetails_top" />
+                <ScalarProperty Name="retroinfodetails_text" ColumnName="retroinfodetails_text" />
+                <ScalarProperty Name="retroinfodetails_retroinfo_id" ColumnName="retroinfodetails_retroinfo_id" />
+                <ScalarProperty Name="retroinfodetails_id" ColumnName="retroinfodetails_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_trn_retroinfo">
+            <EntityTypeMapping TypeName="RetroToolModel.tbl_trn_retroinfo">
+              <MappingFragment StoreEntitySet="tbl_trn_retroinfo">
+                <ScalarProperty Name="retroinfo_isdeleted" ColumnName="retroinfo_isdeleted" />
+                <ScalarProperty Name="retroinfo_status" ColumnName="retroinfo_status" />
+                <ScalarProperty Name="retroinfo_imageinfo_id" ColumnName="retroinfo_imageinfo_id" />
+                <ScalarProperty Name="retroinfo_imagepath" ColumnName="retroinfo_imagepath" />
+                <ScalarProperty Name="retroinfo_date" ColumnName="retroinfo_date" />
+                <ScalarProperty Name="retroinfo_sprint" ColumnName="retroinfo_sprint" />
+                <ScalarProperty Name="retroinfo_projectinfo_id" ColumnName="retroinfo_projectinfo_id" />
+                <ScalarProperty Name="retroinfo_name" ColumnName="retroinfo_name" />
+                <ScalarProperty Name="retroinfo_id" ColumnName="retroinfo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

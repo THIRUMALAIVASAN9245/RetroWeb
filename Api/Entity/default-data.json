@@ -1,0 +1,34 @@
+﻿agiledescinfo_id agiledescinfo_text agiledescinfo_type agiledescinfo_remarks agiledescinfo_isdeleted 2 Story clarity Story clarity Story clarity 0 3 Acceptance criteria Acceptance criteria Acceptance criteria 0 4 Dev/Test coordination Dev/Test coordination Dev/Test coordination 0 5 BA and team coordination BA and team coordination BA and team coordination 0 6 Skype connectivity to offshore Skype connectivity to offshore Skype connectivity to offshore 0 7 VM connectivity from offshore VM connectivity from offshore VM connectivity from offshore 0 8 Change in the PBI Change in the PBI Change in the PBI 0 9 TFS – PBI and Task creation TFS – PBI and Task creation TFS – PBI and Task creation 0 10 TFS – Daily burn update TFS – Daily burn update TFS – Daily burn update 0 11 Physical board visibility Physical board visibility Physical board visibility 0 12 Change in the design/logic Change in the design/logic Change in the design/logic 0 13 Test data set up Test data set up Test data set up 0 14 Show & Tell Show & Tell Show & Tell 0 15 Backlog grooming Backlog grooming Backlog grooming 0 16 Capacity planning Capacity planning Capacity planning 0 17 Test Agile Point Test Agile Point NULL 0 18 new12345 new12345 NULL 0 19 test987655 test987655 NULL 0 20 232323 232323 NULL 0 imageinfo_id imageinfo_name imageinfo_path imageinfo_isdeleted 1 Sailboat Retro assets/retro/1_Sailboat_retro.png 0 2 Sailboat Retro good assets/retro/2_going-from-good-to-great.png 0 3 Air Balloon Retro assets/retro/3_Retro-air-balloon.png 0 4 Sail Ship assets/retro/4_Sail-Ship.png 0 5 Speed Boat assets/retro/5_Speed-boat.png 0 6 Speed Car assets/retro/6_speed-car-agile.png 0 7 Speed Car Retro assets/retro/7_speed-car.png 0 8 Starfish retrospective assets/retro/8_Starfish-retrospective.png 0 9 Three Little Pigs assets/retro/9_Three-Little-Pigs.png 0 projectinfo_id projectinfo_name projectinfo_portfolio projectinfo_sow_name projectinfo_sow_coverage projectinfo_remarks projectinfo_isdeleted 2 RLG #TB Customer Journey 1 Think Beyond NULL NULL NULL 0 3 RLG #TB Customer Journey 2 Think Beyond NULL NULL NULL 0 4 RLG #TB Customer Journey 3 Think Beyond NULL NULL NULL 0 5 RLG #TB Customer Journey 4 Think Beyond NULL NULL NULL 0 6 RLG #TB Customer Journey 5 Think Beyond NULL NULL NULL 0 7 RLG #TB Investment NULL NULL NULL NULL 0 8 RLG #TB Building Blocks NULL NULL NULL NULL 0 9 RLG #TB Tools NULL NULL NULL NULL 0
+
+imageinfodetails_id	imageinfodetails_text	imageinfodetails_type	imageinfodetails_imageinfo_id	imageinfodetails_color	imageinfodetails_isdeleted
+1	Goal/Vision	1	1	#ace291	NULL
+2	Wind/Helping Team	2	1	#c19ae0	NULL
+3	Anchor/Delaying Team	3	1	#eabb70	NULL
+4	Rocks Risks	4	1	#ef94d2	NULL
+5	Things that propel us forward	1	2	#ace291	NULL
+6	Things that hold us back	2	2	#c19ae0	NULL
+7	Ricks	3	2	#eabb70	NULL
+8	Positive	1	4	#ace291	NULL
+9	Negative	2	4	#c19ae0	NULL
+10	Goal	3	4	#eabb70	NULL
+11	What moves us forward	1	5	#ace291	NULL
+12	What hold us back	2	5	#c19ae0	NULL
+13	Our goal	3	5	#eabb70	NULL
+14	What we leave	4	5	#ef94d2	NULL
+15	Parachute	1	6	#ace291	NULL
+16	Future facing retrospective	2	6	#c19ae0	NULL
+17	Engine	3	6	#eabb70	NULL
+18	Bridge	4	6	#ef94d2	NULL
+19	Parachute	1	7	#ace291	NULL
+20	Future facing retrospective	2	7	#c19ae0	NULL
+21	Engine	3	7	#eabb70	NULL
+22	Bridge	4	7	#ef94d2	NULL
+23	Abyss	5	7	#eadc83	NULL
+24	Less of	1	8	#ace291	NULL
+25	More of	2	8	#c19ae0	NULL
+26	Keep doing	3	8	#eabb70	NULL
+27	Start doing	4	8	#ef94d2	NULL
+28	Stop doing	5	8	#eadc83	NULL
+29	House of straws	1	9	#ace291	NULL
+30	House of sticks	2	9	#c19ae0	NULL
+31	House of bricks	3	9	#eabb70	NULL
