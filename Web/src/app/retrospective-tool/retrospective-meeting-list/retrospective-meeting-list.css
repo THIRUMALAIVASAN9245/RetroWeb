@@ -1,0 +1,15 @@
+.w3-col.s4 {
+    padding: 5px;
+}
+.w3-modal {
+    padding-top: 40px;
+}
+p {
+    margin: 5px 0 5px;
+}
+
+@media (min-width: 993px) {
+    .w3-modal-content {
+        width: 700px; 
+    }
+}

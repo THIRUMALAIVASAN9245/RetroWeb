@@ -1,0 +1,28 @@
+<div class="table-responsive">
+      <table datatable class="table table-bordered table-hover table-condensed table-responsive">
+            <thead style="background-color: #552369; color:white;">
+                  <tr>
+                        <th class="text-center" width="20%">Project</th>
+                        <th class="text-center" width="20%">Retro Name</th>
+                        <th class="text-center" width="10%">Sprint</th>
+                        <th class="text-center" width="15%">Date</th>
+                        <th class="text-center" width="10%">Action</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr *ngIf="!RetroList || RetroList.length < 1">
+                        <th colspan="9" class="text-center">No Records found</th>
+                  </tr>
+                  <tr *ngFor="let rec of this.RetroList">
+                        <td class="ellipsis" title="{{rec.retroinfo_projectinfo_name}}">{{rec.retroinfo_projectinfo_name}}</td>
+                        <td class="ellipsis" title="{{rec.retroinfo_name}}">{{rec.retroinfo_name}}</td>
+                        <td class="ellipsis" title="{{rec.retroinfo_sprint}}">{{rec.retroinfo_sprint}}</td>
+                        <td class="ellipsis" title="{{rec.retroinfo_date}}">{{rec.retroinfo_date}}</td>
+                        <td style="text-align: center;">
+                              <span style="text-decoration: none;color: #2196f3;font-weight: bold;cursor: pointer;" [routerLink]="['../retrospective-meeting', rec.retroinfo_id]">
+                              {{ rec.retroinfo_status ? "View" : "Join" }}</span>
+                        </td>
+                  </tr>
+            </tbody>
+      </table>
+</div>

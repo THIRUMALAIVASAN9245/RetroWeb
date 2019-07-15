@@ -1,0 +1,92 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+<div id="list">
+    <div class="row panel panel-primary">
+        <div class="panel-heading">
+            Retrospective Meeting List
+        </div>
+    </div>
+    <div class="container" style="min-height: 410px;">
+        <form class="form-horizontal">
+            <div class="row" style="padding-top: 1%;padding-left: 1.3%;">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="selectbasic" class="control-label display-flex">Project : </label>
+                        <select id="selectbasic" name="selectbasic" class="form-control" [(ngModel)]="searchProjectId" (change)="SearchRetro(searchProjectId)">
+                            <option value="0">Select</option>
+                            <option *ngFor="let project of projects" value="{{project.Id}}">{{project.Project}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-9" style="padding-top: 2.2%;padding-right: 2%;">
+                        <input type="button" class="pull-right btn btn-sm btn-primary" value="Add Meeting" onclick="document.getElementById('id01').style.display='block'">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr style="margin-top: 3px;margin-bottom: 12px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <retrospective-grid [RetroList]="retroInfoData"></retrospective-grid>
+            </div>
+        </div>
+        <div class="col-xs-12 col-12" style="text-align: right;padding-right: 0px;padding-left: 0px;">
+            <pagination [totalItems]="totalItems" [(ngModel)]="currentPage" [maxSize]="5" class="pagination-sm" [boundaryLinks]="true"
+                (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
+        </div>
+    </div>
+</div>
+
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4" style="max-width:600px">
+        <form [formGroup]="retroForm" class="w3-container" style="text-align: left;">
+            <div class="w3-section">
+                <label>
+                    <b>Retrospective Name</b>
+                </label>
+                <input formControlName="RetroName" class="form-control w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Retrospective Name"
+                    name="RetroName" required>
+                <div class="w3-half">
+                    <label>
+                        <b>Project</b>
+                    </label>
+                    <select class="form-control w3-input w3-border w3-margin-bottom" formControlName="Project" id="project" required>
+                        <option value="">--Select Project--</option>
+                        <option *ngFor="let project of projects" value="{{project.Id}}">{{project.Project}}</option>
+                    </select>
+                </div>
+                <div class="w3-half" style="padding-left: 15px;">
+                    <label>
+                        <b>Sprint</b>
+                    </label>
+                    <input class="form-control w3-input w3-border w3-margin-bottom" type="text" formControlName="Sprint" placeholder="Sprint">
+                </div>
+                <label>
+                    <b>Retrospective Image Template</b> <small style="color: #a9acb1;"> (double click to enlarge the image) </small>
+                </label>
+                <div>
+                    <div class="w3-row" style="overflow-y: scroll;height: 265px;">
+                        <div *ngFor="let item of imageList" class="w3-col s4">
+                            <img src="{{item.Path}}" (dblclick)="dblclick(item.Path)" (click)="selectedImage(item)" style="width:100%;cursor:pointer"
+                                class="w3-hover-shadow">
+                        </div>
+                    </div>
+                    <div class="w3-row w3-black w3-center">
+                        <div class="w3-display-container">
+                            <p id="caption" *ngIf="items">{{items.Name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div style="text-align: center;" class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button type="button" (click)="onSubmit()" [disabled]="!retroForm.valid" class="w3-button w3-green">Submit</button>
+            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-gray">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+    <div *ngIf="itemsPath" class="w3-modal-content">
+        <img id="img01" src="{{itemsPath}}" style="width:100%">
+    </div>
+</div>

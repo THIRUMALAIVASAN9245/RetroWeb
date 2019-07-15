@@ -1,0 +1,165 @@
+/* You can add global styles to this file, and also import other style files */
+
+@media only screen and (max-width: 500px) {
+    .form-align-left {
+        text-align: left;
+    }
+}
+.panel-primary .panel-heading { 
+    font-weight: bold;
+    background-color:  #035B80 !important; /* rgb(85,35,105) */
+    border-color: #421856 1px !important;
+}
+.panel-primary {
+    border-color: #fff !important; /* border-color: #421856 !important; */
+} 
+.btn-primary {
+     background-color: rgb(190,88,68) !important;
+     border-color: rgb(190,88,68) !important;
+     color: #fff !important;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+     background-color: #fd7659 !important;
+     border-color: #fd7659 !important;
+     color: #fff !important;
+}
+.input-group {
+    z-index: 0 !important;
+}
+.btn {
+    font-weight: bold;
+    border-radius: 18px;
+    border: 2px solid;
+}
+.btn-cancel {
+     background-color: #fff !important;
+     border-color: rgb(190,88,68) !important;
+     color: rgb(190,88,68) !important;
+}
+.btn-cancel:hover, .btn-cancel:active, .btn-cancel:visited, .btn-cancel:focus {
+     background-color: #fff !important;
+     border-color: #fd7659 !important;
+     color: #fd7659 !important;
+}
+.bs-datepicker-container {
+    padding: 0px !important;
+}
+.bs-datepicker {
+    margin-left: 100px !important;
+}
+.theme-green .bs-datepicker-head {
+    background-color: rgb(85,35,105) !important;
+}
+.theme-green .bs-datepicker-body table td span.selected {
+    background-color: rgb(85,35,105) !important;
+}
+footer {
+    background-color: #fff;
+    color: white;
+    height: 50px;
+    text-align: center; 
+    margin-top: 1%; 
+}
+.solid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img {
+    width: 250px;
+    height: 110px;
+    flex-shrink: 0;
+}
+.backdrop{
+    min-height: 920px !important;
+}
+.title {
+    font-family: Georgia; 
+    font-size: 60px; 
+    font-style: italic;
+}
+@media (max-width: 520px) {
+   header img {
+        width: 120px;
+        height: 65px;
+        flex-shrink: 0;
+    }
+    .title {
+        font-family: Georgia; 
+        font-size: 40px; 
+        font-style: italic;
+    }
+}
+@media (min-width: 1200px) {
+    .containernew {
+        background-color: white !important;
+        width: 100% !important;
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+}
+@media (min-width: 501px) {
+    .container {
+        background-color: white !important;
+        width: 100% !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .container {
+        background-color: white !important;
+        width: 100% !important;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    } 
+}
+.display-inline-flex {
+    display: inline-flex;
+}
+.display-flex {
+    display: flex;
+}
+.panelwidth {
+    width: 75% !important;    
+}
+@media (max-width: 450px) {
+     .panelwidth {
+         width: 98% !important;    
+     }
+}
+a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+table, th {
+    /* border: 1px solid black !important; */
+    border-collapse: collapse !important;
+}
+.ellipsis {
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    max-width: 100px !important;
+}
+
+.pagination>li>a, 
+.pagination>li>span {
+    background-color: #552369 !important; 
+    border: 1px solid #aba0af !important; 
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    z-index: 0 !important;
+    background-color: rgb(190,88,68) !important
+}
+
+.agilepoint-scrollable {
+    max-height: 70vh; 
+    overflow-y: scroll;
+}

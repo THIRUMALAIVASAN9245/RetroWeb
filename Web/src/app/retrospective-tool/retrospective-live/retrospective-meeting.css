@@ -1,0 +1,70 @@
+
+.drag-drop-area {
+    margin-left: 0 !important;
+}
+.drop-area {
+    padding-left: 0;
+    padding-right: 0;
+}
+.drag-drop {
+	font-size: 12px;
+	font-style: italic;
+	color: #8c8c8c;
+	font-family: 'OpenSans-Italic';
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#droppable .surgery-objects {
+    position: absolute !important;
+}
+.droppable-area {
+	background-color: #F5F6F7;
+	padding: 2px;
+}
+.surgery-objects-block {
+    display: table;
+	margin-bottom: 12px;
+}
+.surgery-elements {
+	width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'OpenSans-Regular';
+	font-size: 14px;
+	text-align: center;
+    color: #fefefe;
+    height: 35px;
+    border-radius: 3px;
+    border:0;
+	background-color: #07a5e7;
+    box-shadow : 0 0px 0px 0 rgba(0, 0, 0, 0.1);
+	word-wrap: break-word;    /*    Internet Explorer 5.5+  */
+	word-break: break-word;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.abc {
+    text-align: center;
+    color: #fff;
+    /* background-color: #07a5e7; */
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+}
+
+.surgery-elements-drag {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'OpenSans-Regular';
+	font-size: 14px;
+	text-align: center;
+    color: #fefefe;
+    height: 35px;
+    border-radius: 3px;
+    border:0;
+    box-shadow : 0 0px 0px 0 rgba(0, 0, 0, 0.1);
+	word-wrap: break-word;    /*    Internet Explorer 5.5+  */
+	word-break: break-word;
+    cursor: pointer;
+    padding: 0 10px;
+}
