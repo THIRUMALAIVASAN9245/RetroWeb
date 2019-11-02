@@ -25,7 +25,7 @@
     "bootstrap": "3.3.7",
     "core-js": "2.4.1",
     "html2canvas": "1.0.0-alpha.10",
-    "jquery": "3.2.1",
+    "jquery": "3.4.1",
     "moment": "2.19.1",
     "ng2-drag-drop": "3.0.2",
     "ngx-bootstrap": "2.0.0-rc.0",
